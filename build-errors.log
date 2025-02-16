@@ -1,0 +1,3 @@
+# github.com/philipp245/pki-VM
+./main.go:6:2: "github.com/ava-labs/avalanchego/vms" imported and not used
+./main.go:38:16: undefined: platformvm.RegisterVM
