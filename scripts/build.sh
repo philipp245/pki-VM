@@ -12,15 +12,22 @@ then
     exit 1
 fi
 
+# Überprüfen, ob ein Zielpfad vom CLI übergeben wurde
+if [ -z "$1" ]; then
+    echo "Fehler: Kein Zielpfad für die VM-Binary angegeben!"
+    exit 1
+fi
+
 # Baue die VM
 echo "Baue die PKI Blockchain VM..."
-go build -o pki-blockchain-vm
+echo "Building VM binary at: $1"
+go build -o "$1"
 
-# Bestätige, dass die Datei existiert
-if [ -f "pki-blockchain-vm" ]; then
-    echo "Build erfolgreich: pki-blockchain-vm erstellt!"
+# Bestätigen, dass die Datei am richtigen Ort existiert
+if [ -f "$1" ]; then
+    echo "Build erfolgreich: VM-Binary gespeichert unter $1!"
 else
-    echo "Fehler: Build fehlgeschlagen."
+    echo "Fehler: Build fehlgeschlagen. Datei wurde nicht erstellt."
     exit 1
 fi
 
