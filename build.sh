@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # Wechsle ins Verzeichnis, in dem das Skript liegt
