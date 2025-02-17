@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-set -e
 
-# Wechsle ins Verzeichnis, in dem das Skript liegt
-cd "$(dirname "$0")"
+# Debugging: Aktuelles Verzeichnis und Dateien anzeigen
+echo "Aktuelles Verzeichnis: $(pwd)"
+ls -l
+
+set -e  # Falls ein Fehler auftritt, bricht das Skript ab
 
 # Stelle sicher, dass Go installiert ist
 if ! command -v go &> /dev/null
