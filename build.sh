@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# Wechsle ins Verzeichnis, in dem das Skript liegt
+cd "$(dirname "$0")"
+
 # Stelle sicher, dass Go installiert ist
 if ! command -v go &> /dev/null
 then
@@ -19,3 +22,4 @@ else
     echo "Fehler: Build fehlgeschlagen."
     exit 1
 fi
+
